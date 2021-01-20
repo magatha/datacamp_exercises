@@ -1,6 +1,6 @@
 <h1>DataCamp - Data science courses - 2021</h1>
 Thanks to <a href="https://www.datacamp.com/home">DataCamp</a>, you can learn data science with their tutorial and coding challenge on R, Python, SQL and more such as Statitistics, Excel, Tableau, Power Bi...<br>
-The courses topics concern Data Manipulation, Data Visualization, Data Engineering, Reporting, Machine Learning, Probability & Statistics, Importing & CLeaning Data, Applied Finance, Programming, Management and also Case studies.<br>
+The courses topics concern Data Manipulation, Data Visualization, Data Engineering, Reporting, Machine Learning, Probability & Statistics, Importing & CLeaning Data, Applied Finance, Programming, and Management.<br>
 <br>
 <i>All the coding answers given come from my work on DataCamp. Contact me if you find any typo.</i><br>
 <br>
