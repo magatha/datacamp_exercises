@@ -1,0 +1,155 @@
+Joining text strings
+In the data you will be able to find information about the city and state the project was started from. There are two cities called Vancouver in our data. One is in Canada and the other is in the US. Let's create a column that contains the combined information of the city and state. That way there won't be any confusion about which city is meant.
+
+Instructions:
+Go to cell P2.
+Join the city and state together. Make sure to add a comma and space (", ") between the fields.
+What does the new column look like for the project with id 63381877?
+
+Los Angeles, CA
+
+-----
+
+Capitalizing words
+The Kickstarter data contains information about the name of the different projects, in this case the games. The project names appear to use all styles of capitalization. Let's make them have just the first letter of each word capitalized.
+
+Instructions:
+Go to cell D2.
+Capitalize only the first letter of each word.
+What Excel function did you use to accomplish this task?
+
+PROPER()
+
+-----
+
+Using upper and lower case
+There are two other columns in the data that could use some capitalization love. The currency codes need to be in uppercase letters and the values in the staff_pick column need to be in lowercase. Let's fix that!
+
+Instructions:
+Convert the currency values to uppercase in column K.
+Convert the staff_pick values to lowercase in column W.
+What would be the result of the following formula: CONCATENATE(L2, " ", K2, " ", PROPER("pledged"))?
+
+15047 USD Pledged
+
+------
+
+Counting characters
+The data includes the source URL for each of the projects in column U. This URL refers to the web page where the data was scraped.
+Each source link has the following piece of text in common: https://www.kickstarter.com/discover/categories/games/. Let's find out how many characters are in this piece of text.
+
+Instructions:
+Go to column V.
+Count the number of characters in https://www.kickstarter.com/discover/categories/games/.
+Note that you will get the same number in each row of column V because you are counting the characters in the same piece of text.
+How many characters are in https://www.kickstarter.com/discover/categories/games/?
+
+54 
+
+-----
+
+Extracting text
+In the previous exercise you found out how many characters were in the first part of the source URL. That information on its own isn't that interesting. However, we can now use this to extract the portion of the text that is relevant to us.
+In this exercise, your job is to extract only the last part of the URL, which contains information about the category. You know that the number of characters you want to extract from the right equals the total length of the URL string minus the length of the string that comes before the /.
+
+Instructions:
+Go to cell W2.
+Extract only the part of the source URL that comes after the last /.
+What is the value for the source_url_category column for "Raccoon Tycoon: The Fat Cat Expansion"?
+
+tabletop%20games
+
+-----
+
+Replacing characters
+Notice that the category that was extracted from the source URL still looks a bit messy. It contains the following characters %20. This is how URLs encode spaces. Let's clean the text by replacing all instances of the "%20" with a space.
+
+Instructions:
+Go to cell X2.
+Replace "%20" in the source_url_category column by " ".
+What category does "Super Dude Jump" belong to?
+
+tabletop games
+
+-----
+
+Using the system date
+In Excel, there are two functions that give information about the current date and time: NOW() and TODAY(). You want to figure out how many hours have passed since you were born. Your birth time could look something like this: 1/12/1993 3:15.
+You can use the sheet on your right to try out both functions
+What function should be used to calculate the time difference?
+
+NOW ()
+
+-----
+
+Working with dates
+It's time to start working with some dates. In the Kickstarter data there is information about when a project was launched. On top of that, you can also see what the deadline is for a project. Between these two dates backers can pledge money to the project. This time period is called the funding period.
+Kickstarter allows for a funding period anywhere from one to 60 days. Let's find out what the funding period was for the games in our data.
+
+Instructions:
+Go to cell H2.
+Determine the time difference between the deadline and the launched_at date.
+How long did the funding period for "Gaym" last?
+
+20 days
+
+-----
+
+Finding the day of the week
+Imagine you only want to extract part of the date information, like on what day of the week a project was launched for example. You can easily do this with one of the functions that was introduced in the video.
+The function will return a number that needs to be mapped to one of the weekdays. By default, Excel will assume that Sunday is day 1. Let's change that and map Monday to 1.
+
+Instructions:
+Go to cell I2.
+Insert the day of the week the projects were launched, with Monday being the first day.
+What day of the week was "Longest Number Ever Written" launched?
+
+Thursday
+
+-----
+
+Figuring out the month
+Let's do the same for the month now. Remember that in Excel the months are numbered logically, with January being 1 and December 12.
+
+Instructions:
+Go to cell J2.
+Insert the month the projects were launched.
+What month was "Camp Pinetop" launched?
+
+August
+
+-----
+
+Finding the matching column
+With VLOOKUP()you can combine information from different datasets. To be able to do that, there must be a common field between the datasets.
+You can see that a new sheet, named Exchange Rate Table, was added. This currency rates table lets you compare an amount in US Dollar to other currencies.
+What column do these datasets have in common?
+
+currency
+
+-----
+
+Working with range_lookup
+One of the arguments of VLOOKUP()is range_lookup. It's important to understand what this argument does.
+If the range_lookup is entered as FALSE, which best describes the results?
+
+Excel will look for an exact match
+
+-----
+
+Using VLOOKUP
+Now let's calculate the pledged amounts in US dollars. To be able to do this, you'll need to add the exchange rate data to the table. You can use VLOOKUP() to achieve this. Remember the arguments for this function:
+search_key: The value to search for
+range: The range of cells to consider for the search process
+index: The column index of the value to be returned, where the first column in the range is numbered 1
+range_lookup: Determines how the data is matched, with TRUE being an approximate match (default) and FALSE an exact match
+After you have calculated the imported the exchange_rate column, you will be able to determine the pledged_USD amounts.
+
+Instructions:
+Use VLOOKUP() to add the exchange rates in column O.
+Using this information, calculate the pledged amount in dollars in column Q.
+What is the usd_pledged amount of the project with ID 506366660?
+
+$11,234.32
+
+-----
