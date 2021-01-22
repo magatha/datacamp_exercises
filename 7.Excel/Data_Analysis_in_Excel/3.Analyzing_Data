@@ -1,0 +1,157 @@
+Choosing the right count function
+In the video you saw the following count functions:
+COUNT()
+COUNTA()
+COUNTBLANK()
+Let's see if you understand the difference between all of these.
+
+COUNT() : This function counts the number of cells that countain numbers in a given range
+COUNTA() : This function counts the number of cells that are note empty in a range regardless of the type on data it countains
+COUNTBLANK() : This function counts the number of empty cells
+
+-----
+
+Learning to count
+It's time to start doing some analysis to better understand what makes a Kickstarter project successful. Let's determine the number of non-blank values in the cell range D2:G153. There are both text and number values in this range. Only one count function counts the number of non-empty cells regardless of the data type. Make sure to choose the right one.
+
+Instructions:
+Go to cell AL3.
+Count the number of non-blank values for the range D2:G153.
+How many non-blank values are in the range D2:G153?
+
+601
+
+-----
+
+Counting blank cells
+Blank cells will have an impact on your analysis, so it's important to get an idea of the number of blank cells in the dataset. In this exercise, you'll do exactly that.
+
+Instructions:
+Go to cell AK2.
+Count the number of blank values in the entire dataset.
+How many blank cells are there in the entire dataset?
+
+17
+
+-----
+
+Math functions in Excel
+There are multiple math functions in Excel that can be used to calculate summary statistics like the minimum, maximum, average, etc. These functions will help make your analysis easier and get a good understanding of your dataset.
+Which of the following statements about these functions is false?
+
+The SUM() function counts the number of cells that contains a numeric value.
+
+-----
+
+Finding the minimum
+Every Kickstarter project has a goal USD amount. Only if the project succeeds in reaching its funding goal, the backers' credit cards are charged. Funding on Kickstarter is all-or-nothing. If the project falls short of its funding goal, no one is charged.
+Let's find out what the lowest goal USD amount is in our dataset.
+
+Instructions:
+Go to cell AL5.
+Find the minimum goal USD value.
+What is the lowest goal USD amount in the dataset?
+
+$1
+
+-----
+
+Aggregating data
+The people that want to invest in a project are called backers. The number of backers for a project can vary a lot. Let's calculate some summary statistics to get a quick and simple description of the data.
+
+Instructions:
+Go to cell AL8.
+Calculate the following summary statistics for the backers count:
+Sum
+Minimum
+Maximum
+Average
+Median
+Which of these summary statistics corresponds to a value of 155?
+
+Median
+
+-----
+
+The arguments of the IF() function
+The IF() function can perform a logical test and return one value for a TRUE result, and another for a FALSE result. There are three arguments that go into this function. Do you know what the order is?
+
+State a condition to test
+Result if the condition is true
+Result if the condition is false
+
+-----
+
+Performing a logical test
+Now that you have a good idea of how the IF() function works, it's time to do some analysis. Let's create a new column that denotes if the projects was launched during the weekend or on a week day. This would allow us to check if the timing of launching has any effect on how successful a project is later on. In the launched_at_day column, the number 1 corresponds to Monday and increases consecutively to represent the days that follow.
+Remember that the IF() function takes three arguments:
+logical_test: a value or logical expression that can be evaluated as TRUE or FALSE
+value_if_true: [optional] the value to return when logical_test evaluates to TRUE
+value_if_false: [optional] the value to return when logical_test evaluates to FALSE
+
+Instructions:
+Go to cell J2.
+Check if a project was launched during the weekend.
+If yes, set the value to Weekend
+If no, set the value to Week Day
+Was Electric Volleyball: LED Volleyball Net launched on a week day or during the weekend?
+
+Week day
+
+-----
+
+Taking IF() to the next level
+When working on a data analysis project, it's possible that you discover mistakes in your data. Let's imagine that you have access to new information. Apparently Kickstarter encountered some technical difficulties during January and September of 2019. The system didn't count the first five backers for projects from Vancouver, Canada. Let's correct that.
+
+Instructions:
+Go to cell N2.
+Increment the backers-count by 5 if:
+The launched_at_month is January OR September
+The city is Vancouver AND the country_trimmed is Canada
+If these conditions are not met, the backers-count stays the same.
+What is the corrected backers count for Zombicide: 2nd Edition?
+
+50 
+
+-----
+
+Finding unique values
+In Chapter 2, you cleaned the source url information and extracted the categories for the Kickstarter projects in this dataset. This means you can now move on to do some analysis on this column. Let's find out how many unique categories these games fall into.
+
+Instructions:
+Go to cell AM15.
+Determine the number of unique categories using the values of the source_url_category_cleaned column.
+Which of these isn't a category?
+
+strategy games
+
+------
+
+Counting projects
+Now that you know what the different categories are, let's count how many projects are in each category.
+
+Instructions:
+Go to cell AN15.
+Count the number of projects in the live games category.
+Do the same for each of the other categories.
+How many projects are in the puzzles category?
+
+3 
+
+----
+
+Determining the average
+You just summarized information based on a condition. Let's now calculate the average, taking multiple criteria into account. In this case we are interested in the average USD amount pledged to tabletop games that were a success. The pledged_usd can be found in column S and status information is shown in column AH.
+You can use AVERAGEIFS() to achieve this. Remember the syntax for this function:
+AVERAGEIFS(average_range, criteria_range1, criteria1, criteria_range2, criteria2, ...)
+
+Instructions:
+Go to cell AN21.
+Calculate the average pledged_usd for games:
+Belonging to the tabletop games category
+Whose status is successful
+What is the average pledged_USD for all successful tabletop games?
+
+$102,552.84
+
+-----
