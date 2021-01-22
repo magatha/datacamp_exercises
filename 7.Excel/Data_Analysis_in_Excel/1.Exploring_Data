@@ -1,0 +1,141 @@
+What can Excel do?
+Excel is a versatile tool that can be used for many business activities, classwork, and even personal data organization. Have a look at the tasks below and see which ones can be accomplished with Excel.
+What can Excel do?
+
+All of above 
+
+-----
+
+Data analysis steps
+Most businesses have access to an abundance of data. The challenge is to draw the right conclusions. The Data Analysis Process that was discussed in the video, is a framework that can help you transform raw data into information that is useful for decision-making by users.
+
+Understand the business problem
+Get the data
+Explore the data
+Prepare the data
+Analyze the data
+Present the findings
+
+-----
+
+Setting up your environment
+We believe that learning by doing is imperative to become a master in Excel so we’ve prepared an embedded Excel platform for you here. If you can see the sheet on the right properly, you can skip the troubleshooting steps listed below. If you don't, please follow the steps outlined below to make sure Excel works as expected.
+1) Wait a couple of seconds for the Excel environment to load.
+2) You shouldn't have to perform any steps, like logging in to SharePoint. Right from the start, your browser window should look something like this:
+3) If your the Excel environment displays an error message, please take a look at this article.
+
+Depending on your settings, the Excel platform might require you to use the function names in your local language. You can navigate to the second sheet, named Function Name Translations, in the Excel environment on the right. There you'll find a list of translations for the functions used in this course. If your language is not in the list, you can find more options here.
+Is the Excel sheet displayed correctly on the right-hand side?
+
+Yes
+
+-----
+
+Navigating the worksheet
+Let's get started with our Kickstarter data in Excel! Kickstarter is a crowdfunding platform where creators can gather interest on a project they'd like to launch. The general public, also called backers, can invest and send these projects into production. On the right you can see the data. It contains data on all projects in the games category hosted on Kickstarter in 2019.
+You just heard that there is a new backer for a game called Iwari. This person is willing to invest $1000 in the project. This means the data needs to be updated. Both the backers count as the amount pledged need to be adjusted.
+Remember the shortcuts you learned in the video:
+Shortcut	Description
+CMD/CTRL + Arrow Key	Move to the edge of the current data region
+CMD/CTRL + F	Find a value
+CMD/CTRL + G	Go to a specific cell
+These shortcuts will only work if your mouse is within the Excel widget.
+
+Instructions:
+Use a shortcut to find the row corresponding with the Iwari game.
+For that row, increase the backers_count by 1, and set the amount pledged to $14564.5.
+Use a shortcut to go to the end of the table and look at the sum of the pledged column.
+What is the new average amount pledged?
+
+
+$85,655.66
+
+-----
+
+Looking for exact matches
+In the Kickstarter data you can find information both about when the project was created on the platform (created_at), as well as when the project was actually launched and open for donations (launched_at).
+You want to know if these dates are the same. Instead of comparing these two columns row by row, you can use the EXACT() function to create a new column. In this column, you'll find TRUE if the values match exactly, and FALSE if that isn't the case.
+
+Instructions:
+Go to cell F2.
+Use EXACT() to see if the value in cells C2 and D2 are the same.
+Remember that, if necessary, you can navigate to the to the second sheet, named Function Name Translations, to find the translated function name for EXACT().
+Note that because we are using a data table, Excel can automatically complete the rest of the column for you.
+How often are the created_at and launched_at date the same?
+
+In most cases they don't match exactly.
+
+-----
+
+Trimming your data
+For every project, Kickstarter also keeps track of the country the project was started from. It seems that there are some extra white spaces at the start of the country names in our data. Let's get rid of those!
+
+Instructions:
+Go to cell N2.
+Use TRIM() to trim off the spaces in the country column.
+Remember that, if necessary, you can navigate to the to the second sheet, named Function Name Translations, to find the translated function name for TRIM().
+What does the value in cell N144 look like after trimming?
+
+Hong Kong
+
+-----
+
+Sorting the table
+Looking at the data, it seems that the amount pledged seems to vary widely. As part of your data exploration endeavour, you want to order the data in the pledged column (column I) from lowest to highest. This will help you better understand the amount pledged to these Kickstarter projects.
+
+Instructions:
+Go to cell S2.
+SORT() the pledged amounts from lowest to highest.
+What was the lowest amount that was pledged to a project?
+
+1
+
+-----
+
+Nesting functions
+We can gauge the popularity of a project by looking at how much money is being pledged. To get a sense of the most popular projects, let's filter on the games that have raised $100,000 dollars or more.
+To accomplish this, you'll have to nest two functions. A nested function uses a function as one of the arguments. In this case, the data needs to be filtered before being sorted.
+
+Instructions:
+Go to cell T2.
+SORT() the data from highest to lowest.
+FILTER() on projects that have raised over $100,000.
+How many project have raised more than $100,000?
+
+17
+
+-----
+
+Classifying data types
+Excel recognizes four types of information: text values, numeric values, datetime values, and logical values (TRUE or FALSE). These four types of information are known as data types. You can recognize the data type based on how the cell value is aligned. Let's see how much you know about the secrets of cell alignment!
+
+Left-Aligned : Text
+Center-Aligned : Logical
+Right-Aligned : Numeric & Datetime
+
+-----
+
+Changing to text
+By now, you know that there are four data types. As soon as you type something in a cell and hit enter, Excel will try to figure out which of these types you intend. It is not always right though, so you might need to convert the default data type to the appropriate one.
+Let's take a look at our data. We want to make sure the project ID is not accidentally used for calculations. Let's make sure it is is readable as non-numeric characters. Note that IDs are 8-10 characters long.
+
+Instructions:
+Go to cell B2.
+Use TEXT() to convert the id column to text.
+How is the id data aligned after the conversion?
+
+Left-Aligned
+
+-----
+
+Rounding values
+Notice how the decimal places in the pledged column vary from cell to cell. Rounding the amount pledged will help improve the readability of the data by applying uniform formatting to the cell.
+
+Instructions:
+Go to cell K2.
+Use ROUND() to round the pledged amount to 0 decimal points.
+How much money was pledged to the game Warbands of the Dark Beyond using the pledged_rounded column?
+
+46303
+
+-----
