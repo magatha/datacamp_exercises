@@ -54,6 +54,14 @@ It may be useful to preview these augment()-ed data frames with glimpse():
 glimpse(mod_null)
 glimpse(mod_hgt)
 
+# Compute SSE for null model
+mod_null %>%
+  summarize(SSE = sum(.resid^2))
+
+# Compute SSE for regression model
+mod_hgt %>%
+  summarize(SSE = sum(.resid^2))
+
 -----
 
 # Leverage
